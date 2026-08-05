@@ -1,0 +1,262 @@
+
+--- 20260805_164618 utc from 93.185.197.219 (38 bytes) ---
+--- deploy-test from workstation ---\n
+--- 20260805_164838 utc from 93.185.197.219 (24 bytes) ---
+VERIFY-1785948517-CHECK
+
+--- 20260805_164841 utc from 93.185.197.219 (32 bytes) ---
+burst-0-VERIFY-1785948517-CHECK
+
+--- 20260805_164841 utc from 93.185.197.219 (32 bytes) ---
+burst-2-VERIFY-1785948517-CHECK
+
+--- 20260805_164841 utc from 93.185.197.219 (32 bytes) ---
+burst-1-VERIFY-1785948517-CHECK
+
+--- 20260805_164842 utc from 93.185.197.219 (50 bytes) ---
+--- host=VERIFY-PC user=test ts=utc ---
+[ENT]
+abc
+
+--- 20260805_164844 utc from 93.185.197.219 (41 bytes) ---
+PSRUN-1785948523 from windows powershell
+
+--- 20260805_165824 utc from 93.185.197.219 (71 bytes) ---
+--- host=DESKTOP-GCRTR0O user=user ts=2026-08-05T16:58:23.6952482Z ---
+
+--- 20260805_165834 utc from 93.185.197.219 (71 bytes) ---
+--- host=DESKTOP-GCRTR0O user=user ts=2026-08-05T16:58:23.6952482Z ---
+
+--- 20260805_170036 utc from 93.185.197.219 (71 bytes) ---
+--- host=DESKTOP-GCRTR0O user=user ts=2026-08-05T17:00:35.9268502Z ---
+
+--- 20260805_171229 utc from 93.185.197.219 (140 bytes) ---
+--- host=DESKTOP-GCRTR0O user=user os=Майкрософт Windows 11 Pro build=22631 ps=5.1.22621.6133 ts=2026-08-05T17:12:29.3484999Z ---
+
+--- 20260805_171237 utc from 93.185.197.219 (17 bytes) ---
+win1011-adapt-ok
+
+--- 20260805_171304 utc from 93.185.197.219 (140 bytes) ---
+--- host=DESKTOP-GCRTR0O user=user os=Майкрософт Windows 11 Pro build=22631 ps=5.1.22621.6133 ts=2026-08-05T17:13:04.3992424Z ---
+
+--- 20260805_171314 utc from 93.185.197.219 (8 bytes) ---
+[ENT]
+ e
+--- 20260805_171314 utc from 93.185.197.219 (351 bytes) ---
+--- host=DESKTOP-GCRTR0O user=user ts=2026-08-05T17:00:35.9268502Z ---
+--- host=DESKTOP-GCRTR0O user=user os=Майкрософт Windows 11 Pro build=22631 ps=5.1.22621.6133 ts=2026-08-05T17:12:29.3484999Z ---
+--- host=DESKTOP-GCRTR0O user=user os=Майкрософт Windows 11 Pro build=22631 ps=5.1.22621.6133 ts=2026-08-05T17:13:04.3992424Z ---
+
+--- 20260805_171324 utc from 93.185.197.219 (12 bytes) ---
+[ENT]
+Cmfhsq
+--- 20260805_171328 utc from 93.185.197.219 (20 bytes) ---
+ crhbgn [BS][BS][BS]
+--- 20260805_171328 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171328 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171332 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS]Cnfhsq crhbg
+--- 20260805_171338 utc from 93.185.197.219 (21 bytes) ---
+n c pflth;rfvvb c[BS]
+--- 20260805_171344 utc from 93.185.197.219 (24 bytes) ---
+ecgtiyj dsgjkybkcz[ENT]
+
+--- 20260805_171350 utc from 93.185.197.219 (20 bytes) ---
+Ghjdthm? [fgecnbkcz 
+--- 20260805_171352 utc from 93.185.197.219 (24 bytes) ---
+[LEFT][LEFT][LEFT][LEFT]
+--- 20260805_171352 utc from 93.185.197.219 (24 bytes) ---
+[LEFT][LEFT][LEFT][LEFT]
+--- 20260805_171354 utc from 93.185.197.219 (22 bytes) ---
+[LEFT][RIGHT][BS]i[BS]
+--- 20260805_171357 utc from 93.185.197.219 (22 bytes) ---
+op[BS][BS]p[BS]p[DOWN]
+--- 20260805_171403 utc from 93.185.197.219 (20 bytes) ---
+[DOWN]kb jy?[ENT]
+Z 
+--- 20260805_171408 utc from 93.185.197.219 (20 bytes) ---
+ntcnbhjdfk tuj yf wi
+--- 20260805_171418 utc from 93.185.197.219 (11 bytes) ---
+n 11 [ENT]
+
+--- 20260805_171614 utc from 93.185.197.219 (20 bytes) ---
+                    
+--- 20260805_171616 utc from 93.185.197.219 (23 bytes) ---
+           [BS][BS][BS]
+--- 20260805_171617 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171617 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171617 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171617 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171617 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171617 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171618 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171618 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171618 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171618 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171618 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171619 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171619 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171619 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171619 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171619 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171620 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171620 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171620 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171623 utc from 93.185.197.219 (21 bytes) ---
+[BS][BS][BS][BS]G[BS]
+--- 20260805_171630 utc from 93.185.197.219 (20 bytes) ---
+Gjcvjnhb xnj e;t ecg
+--- 20260805_171636 utc from 93.185.197.219 (20 bytes) ---
+tk ekjdbnm keylogger
+--- 20260805_171646 utc from 93.185.197.219 (7 bytes) ---
+ [ENT]
+
+--- 20260805_171945 utc from 93.185.197.219 (21 bytes) ---
+[WIN][WIN][WIN][WIN]
+--- 20260805_171947 utc from 93.185.197.219 (22 bytes) ---
+[WIN][WIN]r[RIGHT][BS]
+--- 20260805_171948 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171948 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171948 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_171951 utc from 93.185.197.219 (24 bytes) ---
+[BS][BS][BS][ENT]
+[ENT]
+
+--- 20260805_172001 utc from 93.185.197.219 (13 bytes) ---
+[WIN]v[ENT]
+
+--- 20260805_172010 utc from 93.185.197.219 (21 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172010 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172010 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172011 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172011 utc from 93.185.197.219 (21 bytes) ---
+[BS][BS][BS][BS][WIN]
+--- 20260805_172021 utc from 93.185.197.219 (8 bytes) ---
+vtail -f
+--- 20260805_172031 utc from 93.185.197.219 (12 bytes) ---
+ /opt/kl-rec
+--- 20260805_172041 utc from 93.185.197.219 (11 bytes) ---
+v/logs/live
+--- 20260805_172051 utc from 93.185.197.219 (10 bytes) ---
+.log[ENT]
+
+--- 20260805_172101 utc from 93.185.197.219 (13 bytes) ---
+ hfccrflb vyt
+--- 20260805_172103 utc from 93.185.197.219 (20 bytes) ---
+ xnj ns [BS][BS][BS]
+--- 20260805_172103 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172103 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172104 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172104 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172104 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172104 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172104 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172105 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172105 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172115 utc from 93.185.197.219 (4 bytes) ---
+[BS]
+--- 20260805_172135 utc from 93.185.197.219 (17 bytes) ---
+Working keylogger
+--- 20260805_172145 utc from 93.185.197.219 (7 bytes) ---
+ [ENT]
+
+--- 20260805_172154 utc from 93.185.197.219 (20 bytes) ---
+Ntgthm cltkfq nfr? x
+--- 20260805_172156 utc from 93.185.197.219 (21 bytes) ---
+nj,s [BS][BS][BS][BS]
+--- 20260805_172156 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172156 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172156 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172157 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172157 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172157 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS][BS]
+--- 20260805_172159 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS][BS]Ntgt
+--- 20260805_172204 utc from 93.185.197.219 (20 bytes) ---
+hm cltkf[BS][BS]=fq 
+--- 20260805_172214 utc from 93.185.197.219 (16 bytes) ---
+nfr>[BS]? xnj,s 
+--- 20260805_172224 utc from 93.185.197.219 (17 bytes) ---
+dct 'nj cj[BS][hf
+--- 20260805_172230 utc from 93.185.197.219 (22 bytes) ---
+yzkjcm d vjq ubnpf[BS]
+--- 20260805_172235 utc from 93.185.197.219 (20 bytes) ---
+[BS][f.[BS], lkz rf;
+--- 20260805_172240 utc from 93.185.197.219 (20 bytes) ---
+ljuj gjkmpjdfntkz rf
+--- 20260805_172246 utc from 93.185.197.219 (20 bytes) ---
+;lst 10 [BS][BS][BS]
+--- 20260805_172248 utc from 93.185.197.219 (20 bytes) ---
+[BS][BS][BS]3[BS]e/ 
+--- 20260805_172259 utc from 93.185.197.219 (17 bytes) ---
+[BS][BS]. vbyene 
+--- 20260805_172338 utc from 93.185.197.219 (12 bytes) ---
+d jnltkmye. 
+--- 20260805_172343 utc from 93.185.197.219 (23 bytes) ---
+fd[BS][BS]gfgr[BS]w[BS]
+--- 20260805_172352 utc from 93.185.197.219 (20 bytes) ---
+q[BS]e[BS] d hfpyst 
+--- 20260805_172358 utc from 93.185.197.219 (23 bytes) ---
+afks [LEFT][LEFT][LEFT]
+--- 20260805_172408 utc from 93.185.197.219 (18 bytes) ---
+[LEFT]q[BS][RIGHT]
+--- 20260805_172410 utc from 93.185.197.219 (22 bytes) ---
+q[RIGHT][RIGHT][RIGHT]
+--- 20260805_172416 utc from 93.185.197.219 (20 bytes) ---
+[RIGHT][ENT]
+Nfr;t c
+--- 20260805_172421 utc from 93.185.197.219 (20 bytes) ---
+ltkfq nfr? xnj,s dth
+--- 20260805_172431 utc from 93.185.197.219 (18 bytes) ---
+yj exbnsdfkcz zpsr
+--- 20260805_172441 utc from 93.185.197.219 (7 bytes) ---
+ [ENT]
+
+--- 20260805_172740 utc from 93.185.197.219 (20 bytes) ---
+                    
+--- 20260805_172744 utc from 93.185.197.219 (20 bytes) ---
+       [ENT]
+\[ENT]
