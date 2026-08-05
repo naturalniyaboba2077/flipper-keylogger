@@ -1,0 +1,36 @@
+
+--- 2026-08-05T21:12:08.579808Z peer=93.185.197.219 lang=0000 tag=unk bytes=21 ---
+Kimi [BS][BS][BS][BS]
+
+--- 2026-08-05T21:12:08.755509Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+[BS][BS][BS][BS][BS]
+
+--- 2026-08-05T21:12:10.755027Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+[BS][BS][BS][BS]Kimi
+
+--- 2026-08-05T21:12:20.834089Z peer=93.185.197.219 lang=0000 tag=unk bytes=6 ---
+ k2.7 
+
+--- 2026-08-05T21:12:30.836870Z peer=93.185.197.219 lang=0000 tag=unk bytes=10 ---
+j,extyysq 
+
+--- 2026-08-05T21:12:33.922897Z peer=93.185.197.219 lang=0000 tag=unk bytes=23 ---
+yf jndtnf[ [BS][BS][BS]
+
+--- 2026-08-05T21:12:34.131522Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+[BS][BS][BS][BS][BS]
+
+--- 2026-08-05T21:12:34.293961Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+[BS][BS][BS][BS][BS]
+
+--- 2026-08-05T21:12:34.921853Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+[BS][BS][BS][BS][BS]
+
+--- 2026-08-05T21:12:41.456520Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+k[BS]ljj,r[BS]extyys
+
+--- 2026-08-05T21:12:49.112576Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+q yf jndtnf[ opus 4/
+
+--- 2026-08-05T21:12:52.501366Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+8 [BS][BS][BS].6[BS]
