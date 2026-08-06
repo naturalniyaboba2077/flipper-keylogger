@@ -1,0 +1,10 @@
+
+--- 2026-08-06T14:40:38.982039Z peer=93.185.197.219 lang=0000 tag=unk bytes=11 ---
+[p[ENT]
+irb
+
+--- 2026-08-06T14:40:49.033804Z peer=93.185.197.219 lang=0000 tag=unk bytes=11 ---
+[WIN]v[UP]
+
+--- 2026-08-06T14:40:53.368781Z peer=93.185.197.219 lang=0000 tag=unk bytes=20 ---
+[LEFT][LEFT][BS][BS]
