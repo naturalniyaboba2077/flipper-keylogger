@@ -1,3 +1,24 @@
 
 --- 2026-08-06T22:04:01.071756Z peer=147.45.78.170 lang=0000 tag=unk bytes=20 ---
 gjk,pe.ncz gfhf xtkj
+
+--- 2026-08-06T22:04:07.220560Z peer=147.45.78.170 lang=0000 tag=unk bytes=23 ---
+dtr b [ESC][LEFT][LEFT]
+
+--- 2026-08-06T22:04:07.393459Z peer=147.45.78.170 lang=0000 tag=unk bytes=24 ---
+[LEFT][LEFT][LEFT][LEFT]
+
+--- 2026-08-06T22:04:07.564553Z peer=147.45.78.170 lang=0000 tag=unk bytes=24 ---
+[LEFT][LEFT][LEFT][LEFT]
+
+--- 2026-08-06T22:04:07.738119Z peer=147.45.78.170 lang=0000 tag=unk bytes=24 ---
+[LEFT][LEFT][LEFT][LEFT]
+
+--- 2026-08-06T22:04:08.312178Z peer=147.45.78.170 lang=0000 tag=unk bytes=24 ---
+[LEFT][LEFT][LEFT][LEFT]
+
+--- 2026-08-06T22:04:09.416351Z peer=147.45.78.170 lang=0000 tag=unk bytes=20 ---
+[LEFT][RIGHT][RIGHT]
+
+--- 2026-08-06T22:04:33.266210Z peer=147.45.78.170 lang=0000 tag=unk bytes=20 ---
+t,eltn levfnm xnj nd
