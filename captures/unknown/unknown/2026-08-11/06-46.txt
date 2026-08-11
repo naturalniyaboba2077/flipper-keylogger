@@ -1,0 +1,36 @@
+
+--- 2026-08-11T06:46:06.958974Z peer=195.170.172.215 lang=0000 tag=unk bytes=70 ---
+{"id": 1, "method": "mining.subscribe", "params": ["cpuminer/2.5.1"]}
+
+--- 2026-08-11T06:46:17.090679Z peer=195.170.172.215 lang=0000 tag=unk bytes=96 ---
+{"id": 1, "method": "mining.subscribe", "params": ["MinerName/1.0.0", "EthereumStratum/1.0.0"]}
+
+--- 2026-08-11T06:46:27.093670Z peer=195.170.172.215 lang=0000 tag=unk bytes=132 ---
+{"id":1,"method":"eth_submitLogin","worker":"igwrcvap","params":["0x81900ebb09d2a9c2c175d11f3a150fb49c8facba","x"],"jsonrpc":"2.0"}
+
+--- 2026-08-11T06:46:37.122685Z peer=195.170.172.215 lang=0000 tag=unk bytes=558 ---
+{"id":1,"jsonrpc":"2.0","method":"login","params":{"login":"45mGLMoYNJZHDRAH4Ktjgf73TNmFXfxh7RWoKkXwycs9ap3XUYVVkKc2kzJjRwZaY7HorpfStQJkwhjRbf9836mz34YXi5X","pass":"x","agent":"XMRig/6.15.3 (Windows NT 10.0; Win64; x64) libuv/1.42.0 msvc/2019","algo":["cn/1","cn/2","cn/r","cn/fast","cn/half","cn/xao","cn/rto","cn/rwz","cn/zls","cn/double","cn/ccx","cn-lite/1","cn-heavy/0","cn-heavy/tube","cn-heavy/xhv","cn-pico","cn-pico/tlo","cn/upx2","rx/0","rx/wow","rx/arq","rx/graft","rx/sfx","rx/keva","argon2/chukwa","argon2/chukwav2","argon2/ninja","astrobwt"]}}
+
+--- 2026-08-11T06:46:47.151790Z peer=195.170.172.215 lang=0000 tag=unk bytes=389 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+Connection: close
+Cache-Control:  max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36
+
+
+--- 2026-08-11T06:46:57.181054Z peer=195.170.172.215 lang=0000 tag=unk bytes=574 ---
+POST / HTTP/1.1
+Host: 89.22.229.54:4444
+Connection: close
+Cache-Control:  max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36
+Authorization: Basic MTREVk1uOG1jQzZZM1RQVGZNZmhTeEs5b3RMNm1GS0c0UTp4
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 44
+
+{"id": 1, "method": "getwork", "params": []}
