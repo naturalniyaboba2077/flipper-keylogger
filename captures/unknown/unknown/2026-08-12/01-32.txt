@@ -1,0 +1,25 @@
+
+--- 2026-08-12T01:32:44.732709Z peer=45.194.67.29 lang=0000 tag=unk bytes=172 ---
+GET / HTTP/1.1
+user-agent: Mozilla/5.0 (compatible; FlowIQLabsBot/1.0; +https://flowiq-labs.com/scanning-info)
+accept: */*
+connection: close
+host: 89.22.229.54:4444
+
+
+--- 2026-08-12T01:32:59.025271Z peer=94.154.43.12 lang=0000 tag=unk bytes=579 ---
+POST /cgi-bin/cstecgi.cgi HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+Origin: http://89.22.229.54:4444
+Connection: keep-alive
+Referer: http://89.22.229.54:4444/advance/traceroute.html?time=1679125513355
+Upgrade-Insecure-Requests: 1
+
+command=127.0.0.1&num=4&topicurl=setTracerouteCfg
+
