@@ -6,3 +6,19 @@ User-Agent: curl/7.81.0
 Accept: */*
 Accept-Encoding: gzip, deflate
 
+
+--- 2026-08-14T02:01:11.159775Z peer=104.128.137.131 lang=0000 tag=unk bytes=121 ---
+CONNECT ipinfo.io:443 HTTP/1.1
+Host: ipinfo.io
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-14T02:01:22.159081Z peer=104.128.137.131 lang=0000 tag=unk bytes=129 ---
+CONNECT api.ipify.org:443 HTTP/1.1
+Host: api.ipify.org
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
