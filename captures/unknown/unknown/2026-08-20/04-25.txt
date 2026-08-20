@@ -1,0 +1,8 @@
+
+--- 2026-08-20T04:25:24.177941Z peer=64.62.156.24 lang=0000 tag=unk bytes=222 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70
+Accept: */*
+Accept-Encoding: gzip
+
