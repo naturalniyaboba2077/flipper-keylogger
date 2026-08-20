@@ -1,0 +1,16 @@
+
+--- 2026-08-20T11:47:39.182891Z peer=132.243.19.100 lang=0000 tag=unk bytes=115 ---
+CONNECT 2ip.ru:443 HTTP/1.1
+Host: 2ip.ru
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-20T11:47:50.184075Z peer=132.243.19.100 lang=0000 tag=unk bytes=125 ---
+CONNECT ifconfig.me:443 HTTP/1.1
+Host: ifconfig.me
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
