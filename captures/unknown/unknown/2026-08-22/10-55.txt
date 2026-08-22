@@ -1,0 +1,32 @@
+
+--- 2026-08-22T10:55:04.879044Z peer=157.228.138.117 lang=0000 tag=unk bytes=125 ---
+CONNECT httpbin.org:443 HTTP/1.1
+Host: httpbin.org
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-22T10:55:15.878108Z peer=157.228.138.117 lang=0000 tag=unk bytes=129 ---
+CONNECT icanhazip.com:443 HTTP/1.1
+Host: icanhazip.com
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-22T10:55:26.878484Z peer=157.228.138.117 lang=0000 tag=unk bytes=121 ---
+CONNECT ipinfo.io:443 HTTP/1.1
+Host: ipinfo.io
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-22T10:55:37.904737Z peer=157.228.138.117 lang=0000 tag=unk bytes=129 ---
+CONNECT api.ipify.org:443 HTTP/1.1
+Host: api.ipify.org
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
