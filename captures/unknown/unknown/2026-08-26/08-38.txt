@@ -1,0 +1,4 @@
+
+--- 2026-08-26T08:38:06.884824Z peer=156.59.197.102 lang=0000 tag=unk bytes=228 ---
+{"id": 1, "method": "mining.subscribe", "params": ["StratumSim/1.0"]}
+{"id": 2, "method": "mining.authorize", "params": ["0x4bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "x"]}
