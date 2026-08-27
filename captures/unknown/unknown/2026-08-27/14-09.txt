@@ -1,0 +1,7 @@
+
+--- 2026-08-27T14:09:37.476620Z peer=147.185.132.206 lang=0000 tag=unk bytes=220 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity
+Accept-Encoding: gzip
+
