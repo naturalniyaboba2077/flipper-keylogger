@@ -1,0 +1,40 @@
+
+--- 2026-08-30T09:01:12.351761Z peer=135.136.178.243 lang=0000 tag=unk bytes=115 ---
+CONNECT 2ip.io:443 HTTP/1.1
+Host: 2ip.io
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-30T09:01:23.349810Z peer=135.136.178.243 lang=0000 tag=unk bytes=125 ---
+CONNECT ifconfig.me:443 HTTP/1.1
+Host: ifconfig.me
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-30T09:01:34.355427Z peer=135.136.178.243 lang=0000 tag=unk bytes=125 ---
+CONNECT httpbin.org:443 HTTP/1.1
+Host: httpbin.org
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-30T09:01:45.358611Z peer=135.136.178.243 lang=0000 tag=unk bytes=129 ---
+CONNECT icanhazip.com:443 HTTP/1.1
+Host: icanhazip.com
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
+
+--- 2026-08-30T09:01:56.351677Z peer=135.136.178.243 lang=0000 tag=unk bytes=121 ---
+CONNECT ipinfo.io:443 HTTP/1.1
+Host: ipinfo.io
+User-Agent: curl/7.81.0
+Accept: */*
+Accept-Encoding: gzip, deflate
+
