@@ -1,0 +1,11 @@
+
+--- 2026-08-31T01:22:49.400715Z peer=20.38.34.106 lang=0000 tag=unk bytes=114 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 zgrab/0.x
+Accept: */*
+Accept-Encoding: gzip
+
+
+--- 2026-08-31T01:22:49.755020Z peer=20.38.34.106 lang=0000 tag=unk bytes=25 ---
+MGLNDD_89.22.229.54_4444
