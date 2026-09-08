@@ -23,3 +23,6 @@ Sec-WebSocket-Key: 7X/kCzB8wtTxkLXN9a3fmQ==
 Sec-WebSocket-Version: 13
 Upgrade: websocket
 
+
+--- 2026-09-08T08:59:17.161587Z peer=167.94.146.54 lang=0000 tag=unk bytes=6 ---
+*IDN?
