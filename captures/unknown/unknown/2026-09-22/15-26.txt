@@ -1,0 +1,8 @@
+
+--- 2026-09-22T15:26:52.193741Z peer=85.217.149.29 lang=0000 tag=unk bytes=232 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 ModatScanner/1.2 (+https://modat.io/)
+Accept: */*
+Accept-Encoding: gzip
+
