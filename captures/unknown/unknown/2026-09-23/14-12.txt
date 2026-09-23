@@ -1,0 +1,14 @@
+
+--- 2026-09-23T14:12:39.995625Z peer=176.32.193.16 lang=0000 tag=unk bytes=417 ---
+GET / HTTP/1.0
+User-Agent: Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.2 (KHTML, like Gecko) Safari/85.8
+Accept: */*
+
+GET / HTTP/1.0
+User-Agent: Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.2 (KHTML, like Gecko) Safari/85.8
+Accept: */*
+
+GET / HTTP/1.0
+User-Agent: Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.2 (KHTML, like Gecko) Safari/85.8
+Accept: */*
+
