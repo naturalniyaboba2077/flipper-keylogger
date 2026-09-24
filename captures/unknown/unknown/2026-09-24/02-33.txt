@@ -1,0 +1,7 @@
+
+--- 2026-09-24T02:33:40.880943Z peer=94.183.174.99 lang=0000 tag=unk bytes=98 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: python-requests/2.31.0
+Connection: close
+
