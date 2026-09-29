@@ -1,0 +1,8 @@
+
+--- 2026-09-29T01:54:56.779784Z peer=65.49.1.66 lang=0000 tag=unk bytes=173 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0
+Accept: */*
+Accept-Encoding: gzip
+
