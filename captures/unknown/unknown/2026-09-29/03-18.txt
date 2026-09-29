@@ -1,0 +1,9 @@
+
+--- 2026-09-29T03:18:57.237052Z peer=85.217.149.5 lang=0000 tag=unk bytes=130 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:0
+Ntrip-Version: Ntrip/2.0
+User-Agent: NTRIP zgrab2/ntrip
+Accept: */*
+Connection: close
+
