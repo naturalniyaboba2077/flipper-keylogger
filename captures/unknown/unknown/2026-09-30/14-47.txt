@@ -1,0 +1,9 @@
+
+--- 2026-09-30T14:47:51.066778Z peer=185.247.137.123 lang=0000 tag=unk bytes=197 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+User-Agent: Mozilla/5.0 (compatible; InternetMeasurement/1.0; +https://internet-measurement.com/)
+Connection: close
+Accept: */*
+Accept-Encoding: gzip
+
