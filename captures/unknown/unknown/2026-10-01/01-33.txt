@@ -1,0 +1,8 @@
+
+--- 2026-10-01T01:33:50.716386Z peer=217.146.80.103 lang=0000 tag=unk bytes=92 ---
+GET / HTTP/1.1
+Host: 192.0.2.1
+User-Agent: Mozilla/5.0
+Accept: */*
+Connection: close
+
