@@ -1,0 +1,14 @@
+
+--- 2026-10-03T02:39:47.078318Z peer=199.45.154.114 lang=0000 tag=unk bytes=43 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+
+
+--- 2026-10-03T02:39:53.679283Z peer=199.45.154.114 lang=0000 tag=unk bytes=156 ---
+GET / HTTP/1.1
+Host: 89.22.229.54:4444
+Connection: Upgrade
+Sec-WebSocket-Key: H30+ZBmq3of5wiIwBJWhpA==
+Sec-WebSocket-Version: 13
+Upgrade: websocket
+
